@@ -1,0 +1,23 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: template_go
+  path: .
+  commands:
+    install:
+      status: true
+      method: go build -o server cmd/main.go
+    run:
+      status: true
+      method: ./server
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
