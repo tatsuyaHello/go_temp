@@ -92,6 +92,8 @@ func Signup(c *gin.Context) {
 		return
 	}
 	c.JSON(201, gin.H{
+		//NOTE
+		// DBにハッシュして保存されているパスワードをreturnしているので、実際に使用するときはマスクとかした方が良いかも
 		"result":  user,
 		"message": "サインアップに成功しました。",
 	})
